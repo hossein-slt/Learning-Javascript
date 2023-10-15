@@ -14,14 +14,20 @@ console.log(count(numberss, 2));
 
 // It is also possible to use an easier way, reduce() method.
 
-const numbers = [1, 2, 3, 4, 5, 6, 7];
+try {
+    const numbers = [1, 2, 3, 4, 5, 6, 7];
+    console.log(counter(numbers, 7));         // What if we have null, string or undefined instead of an array!
+}
+catch (e) {
+    console.log(e.message);
+}
 
-console.log(counter(numbers, 7));
 function counter(array, searchelement) {
-
+    if (!Array.isArray(array))
+        throw new Error("Invalid array.")
     return array.reduce((accumulator, current) => {
         const occurence = (current === searchelement)
         console.log(accumulator, current, searchelement)
         return accumulator + occurence;
-    }, 0)
+    }, 0);
 }
