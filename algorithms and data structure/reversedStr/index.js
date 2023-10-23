@@ -8,3 +8,14 @@ function reversedStr(str) {
     return reversed;
 }
 console.log(reversedStr("hello"));
+
+// it is also possible to use chain method.
+
+function reverseStr(str) {
+    return str
+        .split("")
+        .reverse()
+        .join("")
+};
+
+console.log(reverseStr("bye"))
