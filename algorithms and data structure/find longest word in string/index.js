@@ -22,3 +22,11 @@ function longestword(str) {
 }
 
 console.log(longestword("Hi my name is Hossein"))
+
+// It is also possible to use a shorter solution,  which is mapping.
+
+function longest(str) {
+    return Math.max(...str.split(' ').map(word => word.length));
+}
+
+console.log(longest("Hi my name is Hossein"))
