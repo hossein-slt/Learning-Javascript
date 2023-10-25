@@ -9,7 +9,7 @@ function titleCase(str) {
     return updatedtitle.join(" ");
 }
 
-console.log(titleCase("hello everybody my name is hossein"))
+console.log(titleCase("hello everyone my name is hossein"))
 
 // Here we can use chain method.
 
@@ -22,3 +22,13 @@ function titlecaseupper(str) {
 }
 
 console.log(titlecaseupper("hello everyone my name is hossein"))
+
+// It is also possible to use regex for cleaner code.
+
+function titlecase(str) {
+    return str
+        .toLowerCase()
+        .replace(/(^|\s)\S/g, L => L.toUpperCase());
+}
+
+console.log(titlecase("hello everyone my name is hossein"))
