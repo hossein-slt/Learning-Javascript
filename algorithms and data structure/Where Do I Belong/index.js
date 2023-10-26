@@ -19,3 +19,14 @@ function getindextoin(arr, num) {
 }
 
 console.log(getindextoin([30, 50, 20, 10, 70, 60,], 40));
+
+// The cleanest and easiest is to use chain method.
+
+function getindex(arr, num) {
+    return arr
+        .concat(num)
+        .sort((a, b) => a - b)
+        .indexOf(num);
+}
+
+console.log(getindex([30, 50, 20, 10, 70, 60,], 40));
