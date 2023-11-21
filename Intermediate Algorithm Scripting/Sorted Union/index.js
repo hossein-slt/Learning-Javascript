@@ -1,7 +1,7 @@
-// There are 3 ways to solve this issue.
+// There are many ways to solve this issue.
 // The first one is to use 'for' loop.
 
-function uniteUniqe(arr) {
+function uniteUnique(arr) {
     const args = [...arguments];
     const result = [];
     for (let i = 0; i < args.length; i++) {
@@ -14,4 +14,18 @@ function uniteUniqe(arr) {
     return result; // In case to sort them use 'sort()' method.
 }
 
-console.log(uniteUniqe([1, 3, 2], [5, 2, 1, 4], [2, 1]));
+console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]));
+
+// We will have to check if the current value is already on the array to be returned for every value.
+
+function uniteUnique1(...arr) {
+    return [...new Set(arr.flat())]
+};
+
+console.log(uniteUnique1([1, 3, 2], [5, 2, 1, 4], [2, 1]));
+
+// Or as an arrow function
+
+const uniteUnique2 = (...arr) => [...new Set(arr.flat())];
+
+console.log(uniteUnique2([1, 3, 2], [5, 2, 1, 4], [2, 1]));
