@@ -29,3 +29,13 @@ console.log(uniteUnique1([1, 3, 2], [5, 2, 1, 4], [2, 1]));
 const uniteUnique2 = (...arr) => [...new Set(arr.flat())];
 
 console.log(uniteUnique2([1, 3, 2], [5, 2, 1, 4], [2, 1]));
+
+// Or we can use chain method.
+
+function uniteUnique3() {
+    return [...arguments]
+        .flat()
+        .filter((item, ind, arr) => arr.indexOf(item) === ind);
+}
+
+console.log(uniteUnique3([1, 3, 2], [5, 2, 1, 4], [2, 1]));
