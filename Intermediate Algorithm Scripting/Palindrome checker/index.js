@@ -13,4 +13,14 @@ function palindrome(str) {
 }
 
 console.log(palindrome('eye'));
-console.log(palindrome('head'));
+
+// It is also possible to use chain method.
+
+function palindrome1(str) {
+    return str
+        .split("")
+        .reverse()
+        .join("") === str;
+}
+
+console.log(palindrome1("ear"))
